@@ -22,6 +22,13 @@ fn trace_header_menu(segy_struct: &segy::construct::SegyFile){
     println!("{}", "2. Save XY coordinates");
     println!("{}", "3. Replace coordinates");
     println!("{:-^30}", "");
+
+    match utilities::get_user_option("Enter option number: "){
+        1 => segy::trace_header::print_coord(segy_struct),
+        2 => segy::trace_header::save_coord(segy_struct),
+        3 => segy::trace_header::replace_coord(segy_struct),
+        _ => println!("{}", "Option not found")
+    }
 }
 
 fn main_menu(segy_struct: &segy::construct::SegyFile){

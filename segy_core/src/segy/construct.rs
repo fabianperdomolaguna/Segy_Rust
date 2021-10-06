@@ -4,7 +4,7 @@ use crate::bytes::read as bytes;
 use crate::utilities;
 
 #[derive(Default)]
-pub struct SegyFile{
+pub struct SegyFile {
     pub filename: String,
     filesize: u64,
     pub number_samples: u16,
